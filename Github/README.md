@@ -32,11 +32,11 @@ Add your demo video file in this folder as:
 
 - `Rod Openclaw.mp4`
 
-Then this embed will show on GitHub:
+Use an encoded path when linking the file on GitHub:
 
-```html
-<video src="Rod Openclaw.mp4" controls width="100%"></video>
-```
+- [Rod Openclaw.mp4](./Rod%20Openclaw.mp4)
+
+GitHub README pages usually do not autoplay inline MP4. Click the link above to open and play the original file.
 
 ## Key Use Cases
 
