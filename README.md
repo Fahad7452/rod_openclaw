@@ -156,12 +156,15 @@ EffectOS is a governance-first execution control layer for teams that need deter
 
 ## Repository Standards
 
-- `ARCHITECTURE.md` - MEG boundaries and system invariants
-- `TESTING.md` - Required testing and release gate conditions
-- `VERSIONING.md` - Versioning and release semantics
-- `SECURITY.md` - Security and vulnerability reporting guidance
-- `CONTRIBUTING.md` - Contribution workflow and quality rules
-- `CHANGELOG.md` - Project change history
+- [ARCHITECTURE.md](./ARCHITECTURE.md) - MEG boundaries and system invariants
+- [TESTING.md](./TESTING.md) - Required testing and release gate conditions
+- [VERSIONING.md](./VERSIONING.md) - Versioning and release semantics
+- [SECURITY.md](./SECURITY.md) - Security and vulnerability reporting guidance
+- [SUPPORT.md](./SUPPORT.md) - Support and communication channels
+- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) - Community behavior expectations
+- [MAINTAINERS.md](./MAINTAINERS.md) - Maintainer roles and ownership
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - Contribution workflow and quality rules
+- [CHANGELOG.md](./CHANGELOG.md) - Project change history
 
 ## Guiding Principle
 

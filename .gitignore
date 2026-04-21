@@ -1,0 +1,10 @@
+# Local archive snapshots (keep locally, do not track)
+Github/Old Files/
+Github/Old Files/*.zip
+
+# Legacy export bundles
+Github/effectos_github_package/
+Github/*_github_*.zip
+
+# Optional local media previews
+assets/*.mp4
