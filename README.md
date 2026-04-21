@@ -30,11 +30,11 @@ EffectOS separates those concerns:
 
 ## Product Demo Video
 
-[![Watch Product Demo Video](./assets/video-preview.svg)](https://github.com/Fahad7452/rod_openclaw/raw/refs/heads/main/assets/Rod%20Openclaw.mp4)
+[![Watch Product Demo Video](./assets/video-preview.svg)](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 - GitHub README usually does not allow true inline MP4 playback.
 - Click the preview image to open and play the video.
-- Direct file link: [Rod Openclaw.mp4](https://github.com/Fahad7452/rod_openclaw/raw/refs/heads/main/assets/Rod%20Openclaw.mp4)
+- Direct file link: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 ## Key Use Cases
 

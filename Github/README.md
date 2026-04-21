@@ -30,11 +30,11 @@ EffectOS separates those concerns:
 
 Add your demo video file in this folder as:
 
-- `Rod Openclaw.mp4`
+- `rod-openclaw.mp4`
 
 Use an encoded path when linking the file on GitHub:
 
-- [Rod Openclaw.mp4](https://github.com/Fahad7452/rod_openclaw/raw/refs/heads/main/assets/Rod%20Openclaw.mp4)
+- [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 GitHub README pages usually do not autoplay inline MP4. Click the link above to open and play the original file.
 
