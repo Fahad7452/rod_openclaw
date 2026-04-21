@@ -26,11 +26,11 @@ EffectOS separates those concerns:
 
 ## MEG Agent SDK Flow Diagram
 
-![MEG Agent SDK Flow Diagram](./MEG%20Agent%20SDK%20Flow%20Diagram.svg)
+![MEG Agent SDK Flow Diagram](./assets/MEG%20Agent%20SDK%20Flow%20Diagram.svg)
 
 ## Product Demo Video
 
-[![Watch Product Demo Video](./assets/video-preview.svg)](./Rod%20Openclaw.mp4)
+[![Watch Product Demo Video](./assets/video-preview.svg)](./assets/Rod%20Openclaw.mp4)
 
 - If inline playback is not available in your browser, click the preview image above to open the video.
 
