@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1200" height="640" rx="20" fill="#020617" stroke="#334155" stroke-width="3"/>
+  <text x="90" y="110" fill="#e2e8f0" font-size="42" font-family="Arial, sans-serif" font-weight="700">Rod Openclaw - Product Demo</text>
+  <text x="90" y="160" fill="#94a3b8" font-size="28" font-family="Arial, sans-serif">Click to play video</text>
+  <circle cx="640" cy="390" r="85" fill="#0ea5e9" opacity="0.95"/>
+  <polygon points="618,345 618,435 690,390" fill="#ffffff"/>
+  <text x="640" y="625" text-anchor="middle" fill="#cbd5e1" font-size="26" font-family="Arial, sans-serif">MP4 demo in repository</text>
+</svg>

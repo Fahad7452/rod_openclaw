@@ -30,15 +30,9 @@ EffectOS separates those concerns:
 
 ## Product Demo Video
 
-<video src="./Rod%20Openclaw.mp4" controls width="100%"></video>
+[![Watch Product Demo Video](./assets/video-preview.svg)](./Rod%20Openclaw.mp4)
 
-Fallback link:
-
-- [Watch Product Demo Video](./Rod%20Openclaw.mp4)
-
-```html
-<video src="./Rod%20Openclaw.mp4" controls width="100%"></video>
-```
+- If inline playback is not available in your browser, click the preview image above to open the video.
 
 ## Key Use Cases
 
