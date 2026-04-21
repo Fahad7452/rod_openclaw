@@ -32,11 +32,13 @@ Add your demo video file in this folder as:
 
 - `rod-openclaw.mp4`
 
-Use an encoded path when linking the file on GitHub:
+Embed the video in README using:
 
-- [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
+```html
+<video src="https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4" controls width="100%"></video>
+```
 
-GitHub README pages usually do not autoplay inline MP4. Click the link above to open and play the original file.
+If inline playback is blocked, use direct link: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 ## Key Use Cases
 
