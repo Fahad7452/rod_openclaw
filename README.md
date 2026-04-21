@@ -30,9 +30,9 @@ EffectOS separates those concerns:
 
 ## Product Demo Video
 
-<video src="https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4" controls width="100%"></video>
+![Product Demo GIF](./assets/demo.gif)
 
-- If inline playback is blocked by your browser/GitHub surface, open directly: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
+- Full video (MP4): [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 ## Key Use Cases
 

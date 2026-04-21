@@ -32,13 +32,13 @@ Add your demo video file in this folder as:
 
 - `rod-openclaw.mp4`
 
-Embed the video in README using:
+Show GIF preview in README using:
 
-```html
-<video src="https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4" controls width="100%"></video>
+```markdown
+![Product Demo GIF](./demo.gif)
 ```
 
-If inline playback is blocked, use direct link: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
+Full video link: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
 ## Key Use Cases
 
