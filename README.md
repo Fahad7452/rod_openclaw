@@ -26,7 +26,7 @@ EffectOS separates those concerns:
 
 ## MEG Agent SDK Flow Diagram
 
-<img src="./MEG%20Agent%20SDK%20Flow%20Diagram.svg" alt="MEG Agent SDK Flow Diagram" width="100%" />
+![MEG Agent SDK Flow Diagram](./MEG%20Agent%20SDK%20Flow%20Diagram.svg)
 
 ## Product Demo Video
 
