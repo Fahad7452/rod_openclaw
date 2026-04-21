@@ -8,3 +8,4 @@ Github/*_github_*.zip
 
 # Optional local media previews
 assets/*.mp4
+!assets/Rod Openclaw.mp4
