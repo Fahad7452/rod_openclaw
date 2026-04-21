@@ -32,7 +32,8 @@ EffectOS separates those concerns:
 
 [![Watch Product Demo Video](./assets/video-preview.svg)](./assets/Rod%20Openclaw.mp4)
 
-- If inline playback is not available in your browser, click the preview image above to open the video.
+- GitHub README may not show an inline player for repo MP4 files.
+- Embedded player page (full width): [Open Video Player](./docs/video-demo.html)
 
 ## Key Use Cases
 
