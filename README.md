@@ -26,18 +26,19 @@ EffectOS separates those concerns:
 
 ## MEG Agent SDK Flow Diagram
 
-![MEG Agent SDK Flow Diagram](Github/MEG%20Agent%20SDK%20Flow%20Diagram.svg)
+![MEG Agent SDK Flow Diagram](MEG%20Agent%20SDK%20Flow%20Diagram.svg)
 
 ## Product Demo Video
 
-Add your demo video file here:
+GitHub README does not reliably render inline `<video>` playback.
+Use a direct video link (click to open/play):
 
-- Expected file path: `assets/Rod Openclaw.mp4`
+- [Watch Product Demo Video](Rod%20Openclaw.mp4)
 
-When you add the file, this embed will work in GitHub:
+Optional HTML fallback (works on some markdown renderers, not guaranteed on GitHub README):
 
 ```html
-<video src="assets/Rod Openclaw.mp4" controls width="100%"></video>
+<video src="Rod Openclaw.mp4" controls width="100%"></video>
 ```
 
 ## Key Use Cases
