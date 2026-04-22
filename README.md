@@ -118,7 +118,6 @@ All API calls require validated effects. The API SDK enforces that every state-c
 ### Product Demo
 ![Product Demo](./assets/demo.gif)
 
-🎬 Full video: [rod-openclaw.mp4](./assets/rod-openclaw.mp4)
 
 ---
 
