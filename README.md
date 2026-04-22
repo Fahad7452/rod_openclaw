@@ -116,9 +116,12 @@ All API calls require validated effects. The API SDK enforces that every state-c
 ![MEG Agent SDK Flow Diagram](./assets/MEG%20Agent%20SDK%20Flow%20Diagram.svg)
 
 ### Product Demo
-🎬 Full video: [rod-openclaw.mp4](./assets/rod-openclaw.mp4)
+<video controls width="100%" preload="metadata">
+  <source src="https://github.com/Fahad7452/rod_openclaw/raw/main/assets/rod-openclaw.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-https://github.com/Fahad7452/rod_openclaw/raw/main/assets/rod-openclaw.mp4
+🎬 Full video: [rod-openclaw.mp4](./assets/rod-openclaw.mp4)
 
 ---
 
