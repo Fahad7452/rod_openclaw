@@ -1,169 +1,237 @@
-# EffectOS - Machine-Enforced Governance (MEG)
+<p align="center">
+  <img src="./assets/MEG Agent SDK Flow Diagram.svg" width="720"/>
+</p>
 
-Deterministic governance for computational effects.
-Runtime can propose, but only MEG can authorize and execute.
+<h1 align="center">EffectOS — Machine-Enforced Governance (MEG)</h1>
 
-![Build](https://img.shields.io/badge/build-docs--ready-brightgreen)
-![Model](https://img.shields.io/badge/model-MEG-blue)
-![Policy](https://img.shields.io/badge/policy-deny--by--default-orange)
+<p align="center">
+  <strong>Execution authority does not exist in runtime.</strong><br/>
+  Runtime can reason. Runtime can request. Runtime cannot execute.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/build-docs--ready-brightgreen?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/model-MEG-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/policy-deny--by--default-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/status-patent--pending-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/discord-ready-7289DA?style=for-the-badge&logo=discord"/>
+</p>
+
+---
+
+> **EffectOS and Machine-Enforced Governance (MEG) are patent-pending architectures defining a new model for governed compute.**
+
+---
 
 ## What is EffectOS?
 
-EffectOS is a governance-first compute model for high-assurance systems.
-It removes execution authority from mutable runtime environments and applies deterministic policy checks before any state-changing operation.
+EffectOS is a **governance-first compute primitive** for high-assurance systems.
 
-This approach improves safety, auditability, and operational control for AI agents and critical automation.
+It removes execution authority from mutable runtime environments and applies **deterministic, cryptographically-validated policy checks** before any state-changing operation can occur.
 
-## Project Purpose
+Traditional systems trust runtime with both decision-making and execution. EffectOS separates those concerns permanently:
 
-Modern systems often trust runtime with both decision-making and execution.
-EffectOS separates those concerns:
+| Traditional Systems | EffectOS |
+|---|---|
+| Runtime decides what is allowed | Execution authority is externalized |
+| Policies are mutable | Only positively authorized effects execute |
+| Execution authority is inherited | Authorization is cryptographically validated |
+| No audit guarantee | Deny-by-default with full audit trail |
 
-- Runtime handles reasoning and intent generation
-- MEG validates intent against explicit policy
-- MEG authorizes or denies effects deterministically
-- Only authorized effects can materialize in the machine world
+---
 
-## MEG Agent SDK Flow Diagram
+## How It Works — Two-Gate Execution Model
 
-![MEG Agent SDK Flow Diagram](./assets/MEG%20Agent%20SDK%20Flow%20Diagram.svg)
+```
+┌─────────────────────────────────────────────────────┐
+│              NON-AUTHORITATIVE RUNTIME               │
+│         No Execution Authority · Proposals Only      │
+│              Agent / API / CLI / User                │
+└──────────────────────┬──────────────────────────────┘
+                       │  Effect Proposal (P/A/G/E Envelope)
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│           GATE 1 — MEG GOVERNANCE LAYER              │
+│  • Canonicalize effect                               │
+│  • Validate via CHVE (Cryptographic Hash Validation) │
+│  • Validate via THVE (Temporal Hash Validation)      │
+│  • Write authorization proof to CAT                  │
+└──────────────────────┬──────────────────────────────┘
+                       │  CAT Proof
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│           GATE 2 — EXTERNAL EXECUTION                │
+│  • Verify CAT proof                                  │
+│  • Execute ONLY if authorized                        │
+│  • No proof → No execution. Full stop.               │
+└─────────────────────────────────────────────────────┘
+```
 
-## Product Demo Video
+**No proof → No execution.**
 
-![Product Demo GIF](./assets/demo.gif)
+---
 
-- Full video (MP4): [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
+## Core Primitives
+
+### Canonical Effects
+Effects are strictly matched — no fuzzy authorization, no ambiguity. Every effect must be canonicalized before it can be evaluated by MEG.
+
+### P/A/G/E Envelope Structure
+Every effect proposal is wrapped in a structured envelope:
+- **P** — Proposal
+- **A** — Authorization context
+- **G** — Governance metadata
+- **E** — Effect payload
+
+### Integrity Model — CHVE / THVE
+- **CHVE** (Cryptographic Hash Validation Engine) — ensures effect integrity hasn't been tampered with
+- **THVE** (Temporal Hash Validation Engine) — ensures authorization is valid within its time window
+
+### CAT — Cryptographic Authorization Token
+The proof artifact written by MEG after successful validation. External execution verifies the CAT before any action is taken.
+
+---
+
+## SDK Overview
+
+> SDK enforces execution. MEG governs authority.
+
+### Agent SDK
+Agents operate inside the MEG boundary. They can reason and propose effects, but **cannot execute without a valid CAT authorization**. The Agent SDK handles envelope construction, CAT verification, and execution gating.
+
+### API SDK
+All API calls require validated effects. The API SDK enforces that every state-changing request passes through MEG before it can materialize. **No validated effect = request blocked.**
+
+---
 
 ## Key Use Cases
 
-- AI agent tool execution with strict effect controls
-- Infrastructure automation with policy gates
-- Compliance-heavy workflows with deterministic approvals
-- Financial and operational actions requiring audit-first execution
+- **AI Agent Execution** — Strict effect controls prevent agents from taking unauthorized actions
+- **Infrastructure Automation** — Policy gates on every infrastructure change
+- **Compliance Workflows** — Deterministic approvals with full audit evidence
+- **Financial Operations** — Audit-first execution for high-risk transactions
+- **Operational Technology (OT)** — Physical actions require explicit MEG authorization
 
-Full details: `docs/use-cases.md`
+---
 
-## Product Capabilities
+## Demo
 
-- Deterministic effect authorization before state changes
-- Explicit policy envelopes for high-risk operations
-- Deny-by-default governance posture
-- Centralized decisioning for multi-agent environments
-- Audit-first operation model for compliance evidence
-- SDK-oriented integration for runtime and service ecosystems
+### Flow Diagram
+![MEG Agent SDK Flow Diagram](./assets/MEG%20Agent%20SDK%20Flow%20Diagram.svg)
+
+### Product Demo
+![Product Demo](./assets/demo.gif)
+
+🎬 Full video: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
+
+---
 
 ## Trust and Execution Model
 
-EffectOS separates reasoning from authority:
+EffectOS creates enforceable governance boundaries that remain stable even if runtime behavior changes:
 
-- Runtime can propose intents and effect candidates
-- MEG validates each effect against explicit policy
-- Only positively authorized effects are executed
-- Denied effects are blocked and retained for audit visibility
+- Runtime **proposes** intents and effect candidates
+- MEG **validates** each effect against explicit policy
+- MEG **authorizes or denies** effects deterministically
+- Only **positively authorized** effects are executed
+- Denied effects are **blocked and retained** for audit visibility
 
-This creates enforceable governance boundaries that remain stable even if runtime behavior changes.
+---
 
-## Security Policy
+## Security Model
 
-### Supported Scope
-
-Security reports are accepted for active project materials in this repository, excluding archival material.
-
-### Reporting a Vulnerability
-
-Include the following in your report:
-
-- Vulnerability type and impact category
-- Affected component or document path
-- Reproduction steps and expected behavior
-- Actual behavior and potential blast radius
-
-### Response Expectations
-
-Reports are prioritized based on:
-
-- Exploitability
-- Impact on authorization and execution boundaries
-- Impact on audit integrity and traceability
-
-### Security Controls (Design Level)
-
+### Design-Level Controls
 - No direct runtime execution authority for high-impact effects
 - Positive authorization required before execution
 - Deny-by-default fallback for uncertain outcomes
 - Deterministic decision outputs with explainable reason codes
 - Protected audit trail model for post-incident review
 
-Full reference: `SECURITY.md` and `docs/threat-model.md`
-
-## Threat and Risk Focus
-
-EffectOS is designed to reduce critical governance failures such as:
-
+### Threat Focus
+EffectOS is designed to eliminate:
 - Runtime compromise attempting unauthorized effect execution
 - Policy tampering that broadens unsafe allow conditions
-- Audit-trail manipulation that hides execution history
+- Audit-trail manipulation hiding execution history
 - Replay of previously valid effect requests
 - Integration gaps that bypass MEG authorization paths
 
+Full reference: [`SECURITY.md`](./SECURITY.md)
+
+---
+
 ## Policy Authoring Principles
 
-For production-safe policy design:
-
-- Default to deny and add narrow allow rules
+- Default to **deny** — add narrow allow rules only
 - Use explicit target and context constraints
-- Keep policy deterministic and testable
+- Keep policy **deterministic and testable**
 - Separate authorization from effect materialization
 - Emit audit-friendly reason codes for allow and deny decisions
 
-Reference guide: `docs/policy-authoring-guide.md`
+---
 
-## Getting Started Path
+## Getting Started
 
-1. Read project purpose and boundary model in `docs/purpose.md`
-2. Review integration requirements in `docs/integration-checklist.md`
-3. Author or adapt policy using `docs/policy-authoring-guide.md`
-4. Validate operational readiness with `docs/release-checklist.md`
-5. Align testing with `docs/testing-strategy.md`
+1. Read [`docs/purpose.md`](./docs/purpose.md) — project purpose and boundary model
+2. Review [`docs/getting-started.md`](./docs/getting-started.md) — integration requirements
+3. Explore the [SDK Overview](./EffectOS_GitHub_Pack_v1/sdk/overview.md) — Agent SDK and API SDK
+4. Study the [Execution Model](./EffectOS_GitHub_Pack_v1/primitive/execution-model.md) — two-gate model deep dive
+5. Align testing with [`docs/testing-strategy.md`](./docs/testing-strategy.md)
 
-## Operations and Compliance Readiness
+---
 
-- `docs/operations-runbook.md` defines incident and runtime procedures
-- `docs/incident-response.md` covers security and recovery handling
-- `docs/versioning-and-releases.md` captures release governance discipline
-- `docs/adr/README.md` tracks architecture decision records
+## Repository Structure
 
-## Product Positioning
+```
+EffectOS_GitHub_Pack_v1/
+├── primitive/
+│   ├── what-is-meg.md          # MEG core definition
+│   ├── canonical-effects.md    # Strict effect matching
+│   ├── envelopes.md            # P/A/G/E envelope structure
+│   ├── execution-model.md      # Two-gate execution model
+│   └── integrity-model.md      # CHVE / THVE integrity
+├── reference/
+│   ├── cat-model.md            # CAT authorization token
+│   ├── effect-schema.md        # Effect schema definition
+│   └── event-types.md          # Core event types
+├── sdk/
+│   ├── overview.md             # SDK overview
+│   ├── agent-sdk.md            # Agent SDK reference
+│   └── api-sdk.md              # API SDK reference
+└── examples/
+    ├── agent-demo.md           # Agent authorization demo
+    ├── api-demo.md             # API validation demo
+    └── ot-demo.md              # Operational technology demo
+```
 
-EffectOS is a governance-first execution control layer for teams that need deterministic, auditable, and policy-driven control over computational effects in AI and automation systems.
+---
 
 ## Documentation
 
-- `docs/index.md` - Full documentation map
-- `docs/purpose.md` - Mission, scope, and non-goals
-- `docs/getting-started.md` - Quick onboarding steps
-- `docs/policy-authoring-guide.md` - How to write safe deterministic policy
-- `docs/threat-model.md` - Security risk model and controls
-- `docs/operations-runbook.md` - Incident and operations procedures
-- `docs/release-checklist.md` - Pre-release governance checklist
-- `docs/integration-checklist.md` - Service/agent integration checklist
-- `docs/testing-strategy.md` - What to test and why
-- `docs/incident-response.md` - Incident handling playbook
-- `docs/versioning-and-releases.md` - Versioning and release process
-- `docs/adr/README.md` - Architecture decisions index
+| Document | Description |
+|---|---|
+| [`docs/index.md`](./docs/index.md) | Full documentation map |
+| [`docs/purpose.md`](./docs/purpose.md) | Mission, scope, and non-goals |
+| [`docs/getting-started.md`](./docs/getting-started.md) | Quick onboarding |
+| [`docs/testing-strategy.md`](./docs/testing-strategy.md) | What to test and why |
+| [`docs/versioning-and-releases.md`](./docs/versioning-and-releases.md) | Release governance |
+| [`docs/adr/README.md`](./docs/adr/README.md) | Architecture decision records |
+| [`ARCHITECTURE.md`](./ARCHITECTURE.md) | MEG boundaries and system invariants |
+| [`SECURITY.md`](./SECURITY.md) | Security and vulnerability reporting |
+| [`TESTING.md`](./TESTING.md) | Testing and release gate conditions |
+| [`VERSIONING.md`](./VERSIONING.md) | Versioning semantics |
 
-## Repository Standards
+---
 
-- [ARCHITECTURE.md](./ARCHITECTURE.md) - MEG boundaries and system invariants
-- [TESTING.md](./TESTING.md) - Required testing and release gate conditions
-- [VERSIONING.md](./VERSIONING.md) - Versioning and release semantics
-- [SECURITY.md](./SECURITY.md) - Security and vulnerability reporting guidance
-- [SUPPORT.md](./SUPPORT.md) - Support and communication channels
-- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) - Community behavior expectations
-- [MAINTAINERS.md](./MAINTAINERS.md) - Maintainer roles and ownership
-- [CONTRIBUTING.md](./CONTRIBUTING.md) - Contribution workflow and quality rules
-- [CHANGELOG.md](./CHANGELOG.md) - Project change history
+## Community
 
-## Guiding Principle
+| | |
+|---|---|
+| [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md) | Community behavior expectations |
+| [`MAINTAINERS.md`](./MAINTAINERS.md) | Maintainer roles and ownership |
+| [`SUPPORT.md`](./SUPPORT.md) | Support and communication channels |
 
-If an effect is not authorized, it does not execute.
+---
+
+<p align="center">
+  <strong>If an effect is not authorized, it does not execute.</strong>
+</p>
