@@ -117,11 +117,11 @@ All API calls require validated effects. The API SDK enforces that every state-c
 
 ### Product Demo
 <video controls width="100%" poster="./assets/demo.gif">
-  <source src="https://github.com/Fahad7452/rod_openclaw/raw/main/assets/rod-openclaw.mp4" type="video/mp4">
+  <source src="./assets/rod-openclaw.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-🎬 Full video: [rod-openclaw.mp4](https://github.com/Fahad7452/rod_openclaw/raw/main/assets/rod-openclaw.mp4)
+🎬 Full video: [rod-openclaw.mp4](./assets/rod-openclaw.mp4)
 
 ---
 
