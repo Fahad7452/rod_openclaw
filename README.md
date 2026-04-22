@@ -120,6 +120,8 @@ All API calls require validated effects. The API SDK enforces that every state-c
 
 🎬 Full video: [rod-openclaw.mp4](https://raw.githubusercontent.com/Fahad7452/rod_openclaw/main/assets/rod-openclaw.mp4)
 
+<video src="./assets/rod-openclaw.mp4" controls width="100%"></video>
+
 ---
 
 ## Trust and Execution Model
