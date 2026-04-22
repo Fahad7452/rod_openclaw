@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./assets/MEG Agent SDK Flow Diagram.svg" width="720"/>
-</p>
-
 <h1 align="center">EffectOS — Machine-Enforced Governance (MEG)</h1>
 
 <p align="center">
