@@ -175,32 +175,6 @@ Full reference: [`SECURITY.md`](./SECURITY.md)
 
 ---
 
-## Repository Structure
-
-```
-EffectOS_GitHub_Pack_v1/
-├── primitive/
-│   ├── what-is-meg.md          # MEG core definition
-│   ├── canonical-effects.md    # Strict effect matching
-│   ├── envelopes.md            # P/A/G/E envelope structure
-│   ├── execution-model.md      # Two-gate execution model
-│   └── integrity-model.md      # CHVE / THVE integrity
-├── reference/
-│   ├── cat-model.md            # CAT authorization token
-│   ├── effect-schema.md        # Effect schema definition
-│   └── event-types.md          # Core event types
-├── sdk/
-│   ├── overview.md             # SDK overview
-│   ├── agent-sdk.md            # Agent SDK reference
-│   └── api-sdk.md              # API SDK reference
-└── examples/
-    ├── agent-demo.md           # Agent authorization demo
-    ├── api-demo.md             # API validation demo
-    └── ot-demo.md              # Operational technology demo
-```
-
----
-
 ## Documentation
 
 | Document | Description |
